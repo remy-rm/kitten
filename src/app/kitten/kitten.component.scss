@@ -1,0 +1,72 @@
+@keyframes volet {
+
+    from {
+        height: 0%;
+        transform: scalex(.9);
+        
+    }
+    to{
+        height: 100%;
+        transform: scaleX(1);
+    }
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    background-color: antiquewhite;
+    color: rgb(226, 141, 38);
+    object-fit: 16/9;
+    width: 400px;
+    height: 200px;
+    position: relative;
+    display: flex;
+    margin-bottom: 1rem;
+    & img{
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        max-width: 400px;
+        height: 00%;
+        aspect-ratio: 9/16;
+        object-fit: cover;
+        object-position: 50% 43%;
+        position: absolute;
+        
+    }
+    & .noimg{
+        width: 0%;
+        border: 2px solid antiquewhite;
+        border-radius: 15px;
+        opacity: 0;
+        color: black;
+        position: absolute; 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        bottom: 0;
+        right: 0;
+                
+    }
+
+    &:hover .noimg{
+        animation: volet 1500ms ease-in-out both;
+        background: white;
+        height: 100%;
+        width: 100%;
+        opacity: 1;
+ 
+
+    }
+
+
+    &:hover img {
+        border-radius: 15px;
+        animation: volet 1500ms ease-in-out both;
+        transform-origin: 50% 100%;
+    }  
+
+    }
+
