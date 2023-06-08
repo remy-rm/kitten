@@ -1,0 +1,48 @@
+
+<div class="container">
+    <form [formGroup]="kittenForm" (ngSubmit)="onSubmit()">
+        <fieldset>
+            <label for="name">son petit nom :
+                <input type="text" formControlName="name">
+             </label> 
+            <div *ngIf="kittenForm.controls['name'].errors && kittenForm.controls['name'].pristine&& kittenForm.controls['name'].touched"class="msg-error">
+                <div [hidden]="!kittenForm.controls['name'].errors['required']">il faut lui donner un petit nom</div>  
+            </div>
+                   
+        </fieldset>
+        <fieldset>
+            <label for="age">quel age a t'il :
+                <input type="number" formControlName="age">
+            </label>  
+            <div *ngIf="kittenForm.controls['age'].errors && kittenForm.controls['age'].pristine&& kittenForm.controls['age'].touched" class="msg-error">
+                <div [hidden]="!kittenForm.controls['age'].errors['required']">quel est son age ?</div>  
+            </div>
+           
+        </fieldset>
+        <fieldset>
+            <label for="races"> quelle est ça races ? :
+                <input type="text" formControlName="races">
+            </label>
+            <div *ngIf="kittenForm.controls['races'].errors && kittenForm.controls['races'].pristine && kittenForm.controls['races'].touched" class="msg-error">
+                <div [hidden]="!kittenForm.controls['races'].errors['required']">il n'a pas de race particulière ? mettez chat de gouttière²</div>  
+            </div>    
+    </fieldset>
+
+        <fieldset>
+            <label for="img"> un lien vers ça frimousse ? (optionnel):
+                <input type="text" formControlName="img">
+            </label>
+            <div *ngIf="kittenForm.controls['img'].errors && kittenForm.controls['img'].touched && kittenForm.controls['img'].dirty" class="msg-error">
+                <div [hidden]="!kittenForm.get('img')?.invalid" >{{kittenForm.get('img')?.errors?.['img'].rules}}</div>  
+            </div>              
+        </fieldset>
+
+        <button type="submit" [disabled]="!kittenForm.valid">Envoyer le petit Chat</button>
+    </form>
+    <div class="kitten" *ngIf="lastKittenCreate.length > 0">
+        <h3>dernier chats : {{lastKittenCreate[lastKittenCreate.length-1].name}}</h3>
+        <app-kitten  [oneKitten]="lastKittenCreate[lastKittenCreate.length-1]"></app-kitten>
+       
+    </div>
+</div>
+

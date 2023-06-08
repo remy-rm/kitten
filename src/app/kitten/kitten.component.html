@@ -1,0 +1,14 @@
+<a (click)="onViewKitten()">
+    <div class="container">
+        <section class="img">
+            <img *ngIf="oneKitten.imgUrl" [src]="oneKitten.imgUrl" alt="">
+            <span class="noimg" *ngIf="!oneKitten.imgUrl">Photo à venir</span>
+        </section>
+        <section class="img--hover">
+            <p>{{oneKitten.name}}</p>
+            <p>{{oneKitten.age}} ans </p>
+            <p>{{oneKitten.races}}</p>
+        </section>
+    
+    </div>
+</a>

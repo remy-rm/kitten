@@ -1,0 +1,16 @@
+<section *ngIf="routeEmpty()">
+  <h2>Chats de l'administrateur :</h2>
+<div class="flex-container">
+  <app-kitten *ngFor="let oneKitten of kitten; let i = index" [oneKitten]="oneKitten" [ngClass]="'animation--' + (i + 1)"></app-kitten>
+  </div>
+  <br/>
+</section>
+<section *ngIf="kittenUser.length > 0">
+  <h2>Chats des utilisateurs :</h2>
+  <div class="flex-container">
+    <app-kitten *ngFor="let oneKitten of kittenUser; let i = index" [oneKitten]="oneKitten" [ngClass]="'animation--' + (i + 1)"></app-kitten>
+  </div>
+</section>
+<section *ngIf="kittenUser.length === 0  && routeEmptyUser()" >
+ <h3>Vous n'avez pas ajouter de chat </h3>
+</section>

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'kitten';
+
+  constructor(private router : Router){}
+
+  isEmpty(){
+    
+    return this.router.url !== '/kitten';
+
+  }
+  isHome(){
+    return this.router.url !== '/'
+  }
+  
 }
