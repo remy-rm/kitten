@@ -1,4 +1,5 @@
-<a (click)="onViewKitten()">
+<div class="flex-container"
+><a (click)="onViewKitten()">
     <div class="container">
         <section class="img">
             <img *ngIf="oneKitten.imgUrl" [src]="oneKitten.imgUrl" alt="">
@@ -10,5 +11,10 @@
             <p>{{oneKitten.races}}</p>
         </section>
     
-    </div>
+    </div>  
 </a>
+<button (click)="kittenAdd()" *ngIf="oneKitten.addKitten; else inactifButton">-</button>
+<ng-template #inactifButton>
+  <button (click)="kittenAdd()">+</button>
+</ng-template>
+</div>

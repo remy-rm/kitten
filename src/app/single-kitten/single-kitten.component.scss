@@ -1,25 +1,42 @@
-.container{
-    display: flex;
-    flex-direction: column;
-    max-width: 400px;    
+.container,
+.noimg {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  & img {
     width: 100%;
-    text-align: center;
-    & img{
-        width: 100%;
-        
-        object-fit:contain;
+    border: solid 2px antiquewhite;
+    border-radius: 12px;
+    margin-bottom: 2px;
+    object-fit: contain;
+  }
+  & .img--hover {
+    background-color: antiquewhite;
+    & p {
+      margin: 15px;
     }
-    & .img--hover{
-        
-        background-color: antiquewhite ;
-        & p{
-            margin: 15px;
-        }
-
-    }
-    
-
+  }
 }
-:host{
-    text-align: center;
+:host {
+  text-align: center;
+}
+button {
+  position: absolute;
+  left: 90%;
+  bottom: 2%;
+  border-radius: 10px;
+  background-color: white;
+  border: 1px solid rgb(226, 141, 38);
+  color: rgb(226, 141, 38);
+  font-size: 20px;
+}
+
+.noimg {
+  height: 40vh;
+  border: solid 1px antiquewhite;
+  border-radius: 12px;
+  margin-bottom: 2px;
 }

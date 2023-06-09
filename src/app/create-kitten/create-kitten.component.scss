@@ -1,56 +1,53 @@
-.container{
+.container {
     display: flex;
-    justify-content: center;        
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    height: 100vh; 
-    
-    
-}
-
-form {
+    height: 100vh;
+  }
+  
+  form {
     display: flex;
-    flex-direction:column ;
+    flex-direction: column;
     & fieldset {
-        border: none;   
-        display:flex ;
-        & label{
-        display:  flex;
+      border: none;
+      display: flex;
+      & label {
+        display: flex;
         flex-direction: column;
         justify-content: space-between;
         width: 100%;
+      }
+      & input {
+        border: none;
+        border-bottom: darken($color: antiquewhite, $amount: 30%) 1px solid;
+        width: 100%;
+        margin-top: 2px;
+        font-size: 18px;
+        color: rgb(226, 141, 38);
+        &:hover,
+        &:focus-visible {
+          background-color: antiquewhite;
+          outline: none;
+          text-align: center;
         }
-        & input{
-            border:none;
-            border-bottom: darken($color: antiquewhite, $amount: 30%) 1px solid;
-            width: 100%;
-            margin-top: 2px;
-            font-size: 18px;
-            color:  rgb(226, 141, 38);
-            &:hover , &:focus-visible{
-                background-color: antiquewhite;
-                outline: none;
-                text-align: center;
-               
-            }
+      }
+      & .msg-error {
+        & div {
+          position: absolute;
+          margin-left: 2vh;
+          margin-top: 30px;
+          color: rgb(249, 72, 72);
         }
-        & .msg-error{
-            & div{
-                position: absolute;
-                margin-left:2vh;
-                margin-top: 30px;
-                color: rgb(249, 72, 72);
-            
-            }
-            
-        }
+      }
     }
-    & button{
-        align-self: center;              }
-
-}
-.kitten {
- margin-left: 0;
- position: absolute;
- top: 20%;
-
-}
+    & button {
+      align-self: center;
+    }
+  }
+  .kitten {
+    margin-left: 0;
+  
+    top: 20%;
+  }
+  

@@ -1,1 +1,25 @@
-<p>user-kitten works!</p>
+<ng-container *ngIf="hasDisplayedPhotos()">
+    <h2>chats que vous avez adopté</h2>
+  </ng-container>
+<div class='container'>
+
+  <div *ngFor="let kitten of kittens">
+ <ng-container *ngIf="kitten.addKitten">
+         <a (click)="onViewKitten(kitten)">  <section class="img">
+            <img *ngIf="kitten.imgUrl" [src]="kitten.imgUrl" alt="">
+            <span class="noimg" *ngIf="!kitten.imgUrl">Photo à venir</span>
+        </section></a>
+
+  </ng-container>
+</div>
+<div *ngFor="let kitten of kittenUser">
+  <ng-container *ngIf="kitten.addKitten">
+               <a (click)="onViewKitten(kitten)">  <section class="img">
+            <img *ngIf="kitten.imgUrl" [src]="kitten.imgUrl" alt="">
+            <span class="noimg" *ngIf="!kitten.imgUrl">Photo à venir</span>
+        </section></a>
+        
+
+  </ng-container>
+</div>
+</div>

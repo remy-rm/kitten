@@ -24,7 +24,7 @@
                 <input type="text" formControlName="races">
             </label>
             <div *ngIf="kittenForm.controls['races'].errors && kittenForm.controls['races'].pristine && kittenForm.controls['races'].touched" class="msg-error">
-                <div [hidden]="!kittenForm.controls['races'].errors['required']">il n'a pas de race particulière ? mettez chat de gouttière²</div>  
+                <div [hidden]="!kittenForm.controls['races'].errors['required']">il n'a pas de race particulière ? mettez chat de gouttière</div>  
             </div>    
     </fieldset>
 

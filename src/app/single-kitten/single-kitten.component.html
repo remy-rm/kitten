@@ -1,6 +1,13 @@
 <div class="container">
     <section class="img">
-        <img [src]="oneKitten.imgUrl" alt="">
+          <section class="img">
+            <img *ngIf="oneKitten.imgUrl" [src]="oneKitten.imgUrl" alt="">
+            <span class="noimg" *ngIf="!oneKitten.imgUrl">Photo à venir</span>
+        </section>
+        <button (click)="kittenAdd()" *ngIf="oneKitten.addKitten; else inactifButton">-</button>
+<ng-template #inactifButton>
+  <button (click)="kittenAdd()">+</button>
+</ng-template>
     </section>
     <section class="img--hover">
         <p>{{oneKitten.name}}</p>

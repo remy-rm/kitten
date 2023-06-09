@@ -1,34 +1,28 @@
 .flex-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
 
+@keyframes appear {
+  from {
+    transform: translateX(-50px);
+    opacity: 0;
   }
-
-  @keyframes appear {
-    from{ transform: translateX(-50px);
-          opacity: 0;
-    }
-    to{
-      transform: translateX(0);
-      opacity: 1;
-    }
+  to {
+    transform: translateX(0);
+    opacity: 1;
   }
+}
 
-  .animation{
-
-    @for $i from 1 through 10 {
-
-      &--#{$i}{
-        
-        animation: appear 1s ease-in-out both;
-        animation-delay: 0.1s*$i;
-      }
+.animation {
+  @for $i from 1 through 10 {
+    &--#{$i} {
+      animation: appear 1s ease-in-out both;
+      animation-delay: 0.1s * $i;
     }
   }
-  app-kitten{
-    text-align: center;
-  }
-
-  
+}
+app-kitten {
+  text-align: center;
+}
